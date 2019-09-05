@@ -1,0 +1,37 @@
+//.badColor {
+//  color: darkred;
+//  font-family: "Arial Black";
+//}
+
+.mat-cell , .mat-header-cell {
+  min-height: 10%;
+  font-size: medium;
+  text-align: center;
+  justify-content: center;
+}
+
+//
+//.mat-header-cell {
+//  display: flex;
+//  justify-content: center;
+//  font-size: larger;
+//  font-weight: bolder;
+//  font-size: larger;
+//  text-align: center;
+//}
+
+.mat-table {
+  height: 100%;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.mat-card {
+}
+
+.mat-form-field {
+  width: 25%;
+  align-content: flex-end;
+}

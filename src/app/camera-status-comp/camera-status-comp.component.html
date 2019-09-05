@@ -1,0 +1,49 @@
+<div>
+  <br>
+  <!--  <button mat-raised-button color="accent" (click)=showCard()> EDGE SHELF</button>-->
+  <!--  <mat-card *ngIf=" displayNoSignUp">-->
+  <!--    <mat-card-title style="font-size: x-large;"> The EDGE Shelf status data</mat-card-title>-->
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="sensorId">
+      <mat-header-cell *matHeaderCellDef>SensorID</mat-header-cell>
+      <mat-cell *matCellDef="let camerastatus">{{camerastatus.sensorId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="facilityId">
+      <mat-header-cell *matHeaderCellDef>Facility ID</mat-header-cell>
+      <mat-cell *matCellDef="let camerastatus">{{camerastatus.facilityId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="divisionId">
+      <mat-header-cell *matHeaderCellDef>Division ID</mat-header-cell>
+      <mat-cell *matCellDef="let camerastatus">{{camerastatus.divisionId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="insertTs">
+      <mat-header-cell *matHeaderCellDef>Last Ping</mat-header-cell>
+      <mat-cell *matCellDef="let camerastatus">{{camerastatus.insertTs}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="camstatus">
+      <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+      <mat-cell *matCellDef="let camerastatus">
+        <ng-container
+          *ngIf=" camerastatus.camstatus ==='GOOD' ; then good; else bad">
+        </ng-container>
+        <ng-template #good>
+          <mat-label
+            [ngStyle]="{'background-color':'\t#90EE90', 'font-weight ' : 'bold'}">{{camerastatus.camstatus}}</mat-label>
+        </ng-template>
+
+        <ng-template #bad>
+          <mat-label
+            [ngStyle]="{'background-color':'red', 'font-weight ' : 'bold'}">{{camerastatus.camstatus}}</mat-label>
+        </ng-template>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <form [formGroup]="angForm" (ngSubmit)="onSubmit(angForm.value)">
+      <mat-expansion-panel class="example-pannel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            LogIn
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your username and password
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input formControlName="username" matInput placeholder="username">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" type="password" matInput placeholder="username">
+        </mat-form-field>
+
+        <mat-card-actions class="example-action-button">
+          <button mat-raised-button color="primary">Login</button>
+        </mat-card-actions>
+
+      </mat-expansion-panel>
+    </form>
+  </mat-card>
+</div>
