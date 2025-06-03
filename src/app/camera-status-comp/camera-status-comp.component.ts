@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from './UserService';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-camera-status-comp',
